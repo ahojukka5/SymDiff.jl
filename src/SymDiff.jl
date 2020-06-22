@@ -22,6 +22,15 @@ function differentiate(::Number, ::Symbol)
     return 0
 end
 
+"""
+    differentiate(f::Symbol, x::Symbol)
+
+Differentiate a symbol.
+"""
+function differentiate(f::Symbol, x::Symbol)
+    return f == x ? 1 : 0
+end
+
 export differentiate
 
 end # module
