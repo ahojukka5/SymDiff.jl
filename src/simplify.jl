@@ -25,3 +25,23 @@ function simplify(::Type{Val{:*}}, ex::Expr)
     length(args) == 1 && return first(args)
     return Expr(:call, :*, args...)
 end
+
+"""
+    simplify(Val{:+}, ex::Expr)
+"""
+function simplify(::Type{Val{:+}}, ex::Expr)
+    args = simplify.(ex.args[2:end])
+    filter!(k -> !isa(k, Number) || k != 0, args)
+    length(args) == 1 && return first(args)
+    return Expr(:call, :+, args...)
+end
+
+"""
+    simplify(Val{:-}, ex::Expr)
+"""
+function simplify(::Type{Val{:-}}, ex::Expr)
+    args = simplify.(ex.args[2:end])
+    filter!(k -> !isa(k, Number) || k != 0, args)
+    length(args) == 1 && return first(args)
+    return Expr(:call, :-, args...)
+end
