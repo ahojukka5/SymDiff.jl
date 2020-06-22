@@ -6,4 +6,7 @@ export differentiate
 include("simplify.jl")
 export simplify
 
+include("subs.jl")
+export subs
+
 end # module

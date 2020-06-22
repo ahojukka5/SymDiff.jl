@@ -12,4 +12,6 @@ using SymDiff: differentiate
     @testset "test_simp_multiplication.jl" begin include("test_simp_multiplication.jl") end
     @testset "test_simp_plus_minus.jl" begin include("test_simp_plus_minus.jl") end
     @testset "test_simp_power.jl" begin include("test_simp_power.jl") end
+
+    @testset "test_subs_num.jl" begin include("test_subs_num.jl") end
 end
