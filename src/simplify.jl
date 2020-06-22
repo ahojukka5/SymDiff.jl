@@ -14,3 +14,14 @@ end
 function simplify(f::Union{Number, Symbol})
     return f
 end
+
+"""
+    simplify(Val{:*}, ex::Expr)
+"""
+function simplify(::Type{Val{:*}}, ex::Expr)
+    args = simplify.(ex.args[2:end])
+    0 in args && return 0
+    filter!(k -> !(isa(k, Number) && k == 1), args)
+    length(args) == 1 && return first(args)
+    return Expr(:call, :*, args...)
+end

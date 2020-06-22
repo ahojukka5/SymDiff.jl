@@ -9,5 +9,6 @@ using SymDiff: differentiate
     @testset "test_diff_power.jl" begin include("test_diff_power.jl") end
 
     @testset "test_simp_num_or_sym.jl" begin include("test_simp_num_or_sym.jl") end
+    @testset "test_simp_multiplication.jl" begin include("test_simp_multiplication.jl") end
 end
 
