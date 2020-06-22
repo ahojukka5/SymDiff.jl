@@ -13,6 +13,11 @@ function differentiate(f::Expr, x::Symbol)
     end
 end
 
+"""
+    differentiate(::Number, ::Symbol)
+
+Differentiate a constant.
+"""
 function differentiate(::Number, ::Symbol)
     return 0
 end
