@@ -31,6 +31,24 @@ function differentiate(f::Symbol, x::Symbol)
     return f == x ? 1 : 0
 end
 
+"""
+    differentiate(Val{:*}, f::Expr, x::Symbol)
+
+Differentiate (fg)' using chain rule: ```(fgh)' = f'gh + fg'h + fgh'```.
+"""
+function differentiate(::Type{Val{:*}}, f::Expr, x::Symbol)
+    op = first(f.args)
+    @assert op == :*
+    res_args = Any[:+]
+    for i in 2:length(f.args)
+        new_args = copy(f.args)
+        new_args[i] = differentiate(f.args[i], x)
+        push!(res_args, Expr(:call, new_args...))
+    end
+    return Expr(:call, res_args...)
+end
+
+
 export differentiate
 
 end # module
