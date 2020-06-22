@@ -13,7 +13,7 @@ function differentiate(f::Expr, x::Symbol)
     end
 end
 
-function differentiate(::Int, ::Symbol)
+function differentiate(::Number, ::Symbol)
     return 0
 end
 
