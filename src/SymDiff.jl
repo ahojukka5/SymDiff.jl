@@ -49,6 +49,18 @@ function differentiate(::Type{Val{:*}}, f::Expr, x::Symbol)
 end
 
 
+"""
+    differentiate(Val{:^}, f::Expr, x::Symbol)
+
+Differentiate d/dx f^a = a * f ^ (a - 1) * diff(f, x)
+"""
+function differentiate(::Type{Val{:^}}, ex::Expr, x::Symbol)
+    op, f, a = ex.args
+    @assert op == :^
+    return :($a * $f ^ ($a - 1) * $(differentiate(f, x)))
+end
+
+
 export differentiate
 
 end # module
