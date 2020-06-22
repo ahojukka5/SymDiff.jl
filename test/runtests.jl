@@ -15,4 +15,5 @@ using SymDiff: differentiate
 
     @testset "test_subs_num.jl" begin include("test_subs_num.jl") end
     @testset "test_subs_symbol.jl" begin include("test_subs_symbol.jl") end
+    @testset "test_subs_expr.jl" begin include("test_subs_expr.jl") end
 end
