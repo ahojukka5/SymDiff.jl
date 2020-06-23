@@ -43,7 +43,6 @@ function differentiate(::Type{Val{:*}}, f::Expr, x::Symbol)
     return Expr(:call, res_args...)
 end
 
-
 """
     differentiate(Val{:^}, f::Expr, x::Symbol)
 
@@ -56,7 +55,6 @@ function differentiate(::Type{Val{:^}}, ex::Expr, x::Symbol)
     return :($a * $f ^ ($a - 1) * $df)
 end
 
-
 """
     differentiate(Val{:/}, ex::Expr, x::Symbol)
 
@@ -68,4 +66,28 @@ function differentiate(::Type{Val{:/}}, ex::Expr, x::Symbol)
     dg = differentiate(g, x)
     dh = differentiate(h, x)
     return :(($dg * $h + $g * $dh) / $h^2)
+end
+
+"""
+    differentiate(Val{:+}, ex::Expr, x::Symbol)
+
+Differentiate d/dx (f + g)
+"""
+function differentiate(::Type{Val{:+}}, ex::Expr, x::Symbol)
+    op = first(ex.args)
+    @assert op == :+
+    args = differentiate.(ex.args[2:end], x)
+    return Expr(:call, :+, args...)
+end
+
+"""
+    differentiate(Val{:-}, ex::Expr, x::Symbol)
+
+Differentiate d/dx (f - g)
+"""
+function differentiate(::Type{Val{:-}}, ex::Expr, x::Symbol)
+    op = first(ex.args)
+    @assert op == :-
+    args = differentiate.(ex.args[2:end], x)
+    return Expr(:call, :-, args...)
 end
