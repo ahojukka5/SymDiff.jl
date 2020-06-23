@@ -52,5 +52,6 @@ Differentiate d/dx f^a = a * f ^ (a - 1) * diff(f, x)
 function differentiate(::Type{Val{:^}}, ex::Expr, x::Symbol)
     op, f, a = ex.args
     @assert op == :^
-    return :($a * $f ^ ($a - 1) * $(differentiate(f, x)))
+    df = differentiate(f, x)
+    return :($a * $f ^ ($a - 1) * $df)
 end
