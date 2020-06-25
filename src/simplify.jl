@@ -53,3 +53,11 @@ function simplify(::Type{Val{:^}}, ex::Expr)
     args = simplify.(ex.args[2:end])
     return Expr(:call, :^, args...)
 end
+
+"""
+    simplify(Val{:/}, ex::Expr)
+"""
+function simplify(::Type{Val{:/}}, ex::Expr)
+    args = simplify.(ex.args[2:end])
+    return Expr(:call, :/, args...)
+end
