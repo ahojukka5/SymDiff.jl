@@ -1,7 +1,9 @@
 # SymDiff.jl - symbolic differentiation
 
-[![Build Status][travis-img]][travis-url]
-[![Coverage Status][coveralls-img]][coveralls-url]
+[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://ahojukka5.github.io/SymDiff.jl/stable)
+[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://ahojukka5.github.io/SymDiff.jl/dev)
+[![Build Status](https://github.com/ahojukka5/SymDiff.jl/workflows/CI/badge.svg)](https://github.com/ahojukka5/SymDiff.jl/actions?query=workflow%3ACI+branch%3Amaster)
+[![Coverage Status](https://coveralls.io/repos/github/ahojukka5/SymDiff.jl/badge.svg?branch=master)](https://coveralls.io/github/ahojukka5/SymDiff.jl?branch=master)
 
 Package author: Jukka Aho (@ahojukka5)
 
@@ -35,8 +37,3 @@ julia> @btime df2(1, 2, 3)
   0.025 ns (0 allocations: 0 bytes)
 72
 ```
-
-[travis-img]: https://travis-ci.org/ahojukka5/SymDiff.jl.svg?branch=master
-[travis-url]: https://travis-ci.org/ahojukka5/SymDiff.jl
-[coveralls-img]: https://coveralls.io/repos/github/ahojukka5/SymDiff.jl/badge.svg?branch=master
-[coveralls-url]: https://coveralls.io/github/ahojukka5/SymDiff.jl?branch=master
