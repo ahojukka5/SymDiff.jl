@@ -1,9 +1,18 @@
 # SymDiff.jl - symbolic differentiation
 
-[![](https://img.shields.io/badge/docs-stable-blue.svg)](https://ahojukka5.github.io/SymDiff.jl/stable)
-[![](https://img.shields.io/badge/docs-dev-blue.svg)](https://ahojukka5.github.io/SymDiff.jl/dev)
-[![Build Status](https://github.com/ahojukka5/SymDiff.jl/workflows/CI/badge.svg)](https://github.com/ahojukka5/SymDiff.jl/actions?query=workflow%3ACI+branch%3Amaster)
-[![Coverage Status](https://coveralls.io/repos/github/ahojukka5/SymDiff.jl/badge.svg?branch=master)](https://coveralls.io/github/ahojukka5/SymDiff.jl?branch=master)
+[![ci](ci-img)](ci-url)
+[![codecov](codecov-img)](codecov-url)
+[![docs-stable](docs-stable-img)](docs-stable-url)
+[![docs-dev](docs-dev-img)](docs-dev-url)
+
+[ci-img]: https://github.com/ahojukka5/SymDiff.jl/workflows/CI/badge.svg
+[ci-url]: https://github.com/ahojukka5/SymDiff.jl/actions?query=workflow%3ACI+branch%3Amaster
+[codecov-img]: https://codecov.io/gh/ahojukka5/SymDiff.jl/branch/master/graph/badge.svg?token=tm03mv3OQ7
+[codecov-url]: https://codecov.io/gh/ahojukka5/SymDiff.jl
+[docs-stable-img]: https://img.shields.io/badge/docs-stable-blue.svg
+[docs-stable-url]: https://ahojukka5.github.io/SymDiff.jl/stable
+[docs-dev-img]: https://img.shields.io/badge/docs-dev-blue.svg
+[docs-dev-url]: https://ahojukka5.github.io/SymDiff.jl/dev
 
 Package author: Jukka Aho (@ahojukka5)
 
