@@ -1,9 +1,9 @@
 # SymDiff.jl - symbolic differentiation
 
-[![ci](ci-img)](ci-url)
-[![codecov](codecov-img)](codecov-url)
-[![docs-stable](docs-stable-img)](docs-stable-url)
-[![docs-dev](docs-dev-img)](docs-dev-url)
+[![ci][ci-img]][ci-url]
+[![codecov][codecov-img]][codecov-url]
+[![docs-stable][docs-stable-img]][docs-stable-url]
+[![docs-dev][docs-dev-img]][docs-dev-url]
 
 [ci-img]: https://github.com/ahojukka5/SymDiff.jl/workflows/CI/badge.svg
 [ci-url]: https://github.com/ahojukka5/SymDiff.jl/actions?query=workflow%3ACI+branch%3Amaster
